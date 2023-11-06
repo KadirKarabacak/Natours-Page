@@ -103,6 +103,7 @@ body {
   animation: moveInRight 1s ease-out;
 }
 
+/* h1 üst satır */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -118,6 +119,7 @@ body {
   }
 }
 
+/* h1 alt satır */
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -133,6 +135,19 @@ body {
   }
 }
 
+/* H1 altındaki buton */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /*  */
 .btn:link,
 .btn:visited {
@@ -141,23 +156,65 @@ body {
   padding: 15px 40px;
   /* This one is inline element so */
   display: inline-block;
-  transition: all .2s;
+  transition: all 0.2s;
   border-radius: 100px;
+
+  /* button::after'a  referans olması için */
+  position: relative;
 }
 
-.btn:hover{
+.btn:hover {
   transform: translateY(-3px);
   /* X direction , Y direction, Blur, Color */
-  box-shadow: 0 10px 20px rgba(0 0 0 .2);
+  box-shadow:
+  38px 37px 83px -34px rgba(0, 0, 0, 0.34)
+;
 }
 
 /* CLICKED */
-.btn:active{
-transform: translateY(-1px);
-box-shadow: 0 5px 10px rgba(0 0 0 .2);
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow:
+  19px 18px 41px -17px rgba(0, 0, 0, 0.171)
+;
 }
 
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* PULSE EFFECT */
+/* elementin arkasında çalışır, elementin çocuğu gibi sayılır */
+.btn::after {
+  /* Content her zaman olmalı, boş bırakılabilir */
+  content: "";
+  /* Seçtiğimiz element ile aynı özelliklere sahip olmalı / inline-block  */
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Butonun arkasına saklamak için */
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+/* Beyaz olması için */
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  /* Scale özelliği X ve Y yönünde farklı yazılabilir */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated{
+  backface-visibility: hidden;
+  /* .75s Gecikme, başlangıçta butonu görünmez yap backwards */
+  animation: moveInBottom .5s ease-out .75s backwards;
 }
