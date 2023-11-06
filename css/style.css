@@ -64,6 +64,7 @@ body {
   /* Ancak element tam ortada görünmez, bunun için */
   transform: translate(-50%, -50%);
   /* Kutunun kendi içinde en ve boy olarak ortalamasını sağlar */
+  text-align: center; /* To center button */
 }
 
 .heading-primary {
@@ -72,6 +73,7 @@ body {
 
   /* Animasyon titremesi düzeltme için */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 .heading-primary-main {
   /* this one is inline element, to put under by under set it block */
@@ -107,6 +109,7 @@ body {
     transform: translateX(-100px);
   }
   80% {
+    opacity: 0.6;
     transform: translateX(5px);
   }
   100% {
@@ -116,15 +119,45 @@ body {
 }
 
 @keyframes moveInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    80% {
-      transform: translateX(-5px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
   }
+  80% {
+    opacity: 0.6;
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/*  */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  /* This one is inline element so */
+  display: inline-block;
+  transition: all .2s;
+  border-radius: 100px;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  /* X direction , Y direction, Blur, Color */
+  box-shadow: 0 10px 20px rgba(0 0 0 .2);
+}
+
+/* CLICKED */
+.btn:active{
+transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0 0 0 .2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
