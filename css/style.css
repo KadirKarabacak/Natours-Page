@@ -1,0 +1,130 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font-size's are inherital */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  /* Padding is not inherital property */
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  /* Add second img with comma for gradient */
+  background-image: linear-gradient(
+      to right,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url(../img/hero.jpg);
+  /* Öğenin boyutu ne olursa olsun kutuya sığdır  */
+  background-size: cover;
+  /* Boyut değişse de resmi en üste sabit tut */
+  background-position: top;
+  /* Öğeyi cliplemek [Sol üst - sağ üst - sağ alt - sol alt] */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  /* Logo için referans olması adına relative */
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* Browser genişliği otomatik hesaplar height yeterli */
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  /* Top ve left özelliği parent element ile alakalıdır */
+  top: 40%;
+  left: 50%;
+  /* Kutunun sol ve üst kenarlığına göre ortalar */
+  /* Ancak element tam ortada görünmez, bunun için */
+  transform: translate(-50%, -50%);
+  /* Kutunun kendi içinde en ve boy olarak ortalamasını sağlar */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  /* Animasyon titremesi düzeltme için */
+  backface-visibility: hidden;
+}
+.heading-primary-main {
+  /* this one is inline element, to put under by under set it block */
+  /* Holding whole line */
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  /* Animations */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* 
+  animation-delay: 3s;              Gecikme
+  animation-iteration-count: 3;     Tekrar
+  animation-timing-function: ease;  Giriş-Çıkış Hız
+  */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    80% {
+      transform: translateX(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
