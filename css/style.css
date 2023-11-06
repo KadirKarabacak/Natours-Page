@@ -13,19 +13,21 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
-/* Font-size's are inherital */
+/* Font-size özellikleri kalıtsaldır */
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  /* Padding is not inherital property */
+  /* Padding kalıtsal değil, body'nin tamamına uygular */
   padding: 30px;
 }
 
 .header {
+  /* Ekran görüntüsünün %95'i kadar */
   height: 95vh;
+  border-radius: 5px;
   /* Add second img with comma for gradient */
   background-image: linear-gradient(
       to right,
@@ -45,6 +47,7 @@ body {
 }
 
 .logo-box {
+  /* logoyu header'a göre konumlandırma */
   position: absolute;
   top: 40px;
   left: 40px;
@@ -57,14 +60,15 @@ body {
 
 .text-box {
   position: absolute;
-  /* Top ve left özelliği parent element ile alakalıdır */
+  /* Top ve left özelliği text-box'ın parent elementi ile ilgilidir */
   top: 40%;
   left: 50%;
-  /* Kutunun sol ve üst kenarlığına göre ortalar */
+  /* text-box'ı sol ve üst kenarlığına göre ortalar */
   /* Ancak element tam ortada görünmez, bunun için */
   transform: translate(-50%, -50%);
-  /* Kutunun kendi içinde en ve boy olarak ortalamasını sağlar */
-  text-align: center; /* To center button */
+  /* -50% -50% Kutunun kendi içinde en ve boy olarak ortalamasını sağlar */
+  text-align: center; 
+  /* To center button */
 }
 
 .heading-primary {
@@ -76,8 +80,7 @@ body {
   margin-bottom: 60px;
 }
 .heading-primary-main {
-  /* this one is inline element, to put under by under set it block */
-  /* Holding whole line */
+  /* Bu element inline, alt alta koymak için blok olarak ayarla */
   display: block;
   font-size: 60px;
   font-weight: 400;
@@ -87,13 +90,16 @@ body {
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+  
   /* 
+
   animation-delay: 3s;              Gecikme
   animation-iteration-count: 3;     Tekrar
-  animation-timing-function: ease;  Giriş-Çıkış Hız
+  
   */
 }
 
+/* Alt başlık */
 .heading-primary-sub {
   display: block;
   font-size: 20px;
@@ -148,13 +154,13 @@ body {
   }
 }
 
-/*  */
+/* Buttonların ilk durumları için */
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
-  /* This one is inline element so */
+  /* Inlıne element olduğu için blok yap */
   display: inline-block;
   transition: all 0.2s;
   border-radius: 100px;
@@ -171,7 +177,7 @@ body {
 ;
 }
 
-/* CLICKED */
+/* Tıklanmış buton */
 .btn:active {
   transform: translateY(-1px);
   box-shadow:
@@ -189,7 +195,7 @@ body {
 .btn::after {
   /* Content her zaman olmalı, boş bırakılabilir */
   content: "";
-  /* Seçtiğimiz element ile aynı özelliklere sahip olmalı / inline-block  */
+  /* Seçtiğimiz element ile aynı özelliklere sahip olmalı. inline-block  */
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -215,6 +221,6 @@ body {
 
 .btn-animated{
   backface-visibility: hidden;
-  /* .75s Gecikme, başlangıçta butonu görünmez yap backwards */
+  /* başlangıçta butonu görünmez yap 'backwards' */
   animation: moveInBottom .5s ease-out .75s backwards;
 }
