@@ -7,21 +7,34 @@ Dark green: #28b485
 
 */
 
-* {
+/* Sayfanın after before ve kendisini seç her zaman garip davranışları engeller */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+/* Kök font-size responsive için HTML'e her zaman 62.5% ver */
+html {
+  /* 10px ile hesaplama yapması daha kolay */
+  /* font-size: 10px; */
+  /* FONT SIZE'I PIKSEL YAZMAK DOĞRU DEĞİL, SABİT 10 PX İÇİN AŞAĞIDAKİNİ YAZ*/
+  font-size: 62.5%;
+  /* Böylece kullanıcı zoom yaptığında tüm sayfa düzenli kalır */
 }
 
 /* Font-size özellikleri kalıtsaldır */
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  /* Padding kalıtsal değil, body'nin tamamına uygular */
-  padding: 30px;
+  padding: 3rem;
+
+  /* Box sizing özelliğini kalıtıma zorlamak için burada yazıp *'da inherit ver */
+  box-sizing: border-box;
 }
 
 .header {
@@ -46,19 +59,19 @@ body {
   position: relative;
 }
 
-.logo-box {
+.header__logo-box {
   /* logoyu header'a göre konumlandırma */
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
-.logo {
+.header__logo {
   /* Browser genişliği otomatik hesaplar height yeterli */
-  height: 35px;
+  height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   /* Top ve left özelliği text-box'ın parent elementi ile ilgilidir */
   top: 40%;
@@ -67,7 +80,7 @@ body {
   /* Ancak element tam ortada görünmez, bunun için */
   transform: translate(-50%, -50%);
   /* -50% -50% Kutunun kendi içinde en ve boy olarak ortalamasını sağlar */
-  text-align: center; 
+  text-align: center;
   /* To center button */
 }
 
@@ -77,20 +90,20 @@ body {
 
   /* Animasyon titremesi düzeltme için */
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
-.heading-primary-main {
+.heading-primary--main {
   /* Bu element inline, alt alta koymak için blok olarak ayarla */
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   /* Animations */
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  
+
   /* 
 
   animation-delay: 3s;              Gecikme
@@ -100,11 +113,11 @@ body {
 }
 
 /* Alt başlık */
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   animation: moveInRight 1s ease-out;
 }
@@ -113,11 +126,11 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
     opacity: 0.6;
-    transform: translateX(5px);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -129,11 +142,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
     opacity: 0.6;
-    transform: translateX(-5px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -145,7 +158,7 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -159,33 +172,30 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
   /* Inlıne element olduğu için blok yap */
   display: inline-block;
   transition: all 0.2s;
-  border-radius: 100px;
+  border-radius: 10rem;
 
   /* button::after'a  referans olması için */
   position: relative;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(0.3rem);
   /* X direction , Y direction, Blur, Color */
-  box-shadow:
-  38px 37px 83px -34px rgba(0, 0, 0, 0.34)
-;
+  box-shadow: 4rem 4rem 8rem -3.5rem rgba(0, 0, 0, 0.34);
 }
 
 /* Tıklanmış buton */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow:
-  19px 18px 41px -17px rgba(0, 0, 0, 0.171)
-;
+  box-shadow: 2rem 2rem 4rem -1.5rem rgba(0, 0, 0, 0.171);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -199,7 +209,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -209,7 +219,7 @@ body {
 }
 
 /* Beyaz olması için */
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -219,8 +229,8 @@ body {
   opacity: 0;
 }
 
-.btn-animated{
+.btn--animated {
   backface-visibility: hidden;
   /* başlangıçta butonu görünmez yap 'backwards' */
-  animation: moveInBottom .5s ease-out .75s backwards;
+  animation: moveInBottom 0.5s ease-out 0.75s backwards;
 }
