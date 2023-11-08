@@ -1,0 +1,69 @@
+.btn {
+    // Buttonların ilk durumları için
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        font-size: 1.6rem;
+        // Inlıne element olduğu için blok yap
+        display: inline-block;
+        transition: all 0.2s;
+        border-radius: 10rem;
+
+        // button::after'a  referans olması için
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        // X direction , Y direction, Blur, Color
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+        &::after {
+            // Scale özelliği X ve Y yönünde farklı yazılabilir
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    // Tıklanmış buton
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        // Beyaz olması için
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    // PULSE EFFECT
+    // elementin arkasında çalışır, elementin çocuğu gibi sayılır
+    &::after {
+        // Content her zaman olmalı, boş bırakılabilir
+        content: "";
+        // Seçtiğimiz element ile aynı özelliklere sahip olmalı. inline-block
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // Butonun arkasına saklamak için
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &--animated {
+        backface-visibility: hidden;
+        // başlangıçta butonu görünmez yap 'backwards'
+        animation: moveInBottom 0.5s ease-out 0.75s backwards;
+    }
+}

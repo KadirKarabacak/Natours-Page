@@ -1,0 +1,21 @@
+// Sayfanın after before ve kendisini seç her zaman garip davranışları engeller
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+// Kök font-size responsive için HTML'e her zaman 62.5% ver
+html {
+    // Sabit 10px ile hesaplama yapması daha kolay.
+    // font-size: 10px;
+    // 1 rem 62.5%
+    font-size: 62.5%;
+    // Böylece kullanıcı zoom yaptığında tüm sayfa düzenli kalır
+}
+
+body{
+    box-sizing: border-box;
+}
