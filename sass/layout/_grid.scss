@@ -10,7 +10,6 @@
 
     // Blok öğelerini ortalamak için trick
     margin: 0 auto;
-    background-color: #eee;
 
     // Last-child hariç diğer tüm rowlara margin-bottom uygula
     &:not(:last-child) {
@@ -24,7 +23,6 @@
     [class^="col-"] {
         // Float özelliği kullanılınca heigt özelliği 0'lanır. Clearfix yapmalıyız
         float: left;
-        background-color: orangered;
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;

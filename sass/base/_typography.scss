@@ -37,3 +37,23 @@ body {
         animation: moveInRight 1s ease-out;
     }
 }
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    // Display inline block yap, gredient sadece yazıyı kapsasın
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    background-clip: text;
+    // Yazıyı kes, arka plan görünmesi için transparan yap
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .3s;
+
+    &:hover{
+        transform: skewY(2deg) skewX(15deg) scale(1.05);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, $alpha: .2);
+    }
+}
