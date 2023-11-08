@@ -4,3 +4,18 @@
     // Header height 95vh, clip path 75vh 95-75 = 20
     margin-top: -20vh;
 }
+
+.section-features{
+    padding: 20rem 0;
+    background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
+        url(../img/nat-4.jpg);
+    background-size: cover;
+    // To fix whitespaces cuz of skew
+    margin-top: -10rem;
+    // Instead of clip path use skew
+    transform: skewY(-7deg);
+    // And fix under features whole childs skew to normal
+    & > *{
+        transform: skewY(7deg);
+    }
+}
