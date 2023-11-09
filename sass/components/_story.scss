@@ -1,0 +1,68 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    border-radius: 5px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    backface-visibility: hidden;
+    background-color: rgba($color-white, .6);
+
+    // alttakilerin skew'ini düzeltmek için Ama bu çalışmıyor
+    // çünkü birden fazla transform aynı anda çalışmaz
+    // ve shape içinde zaten bir transform var
+
+    // & > * {
+    //     transform: skewX(12deg);
+    // }
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        // Yazıların nerede float olacağını bildirmek için
+        shape-outside: circle(50% at 50% 50%);
+        // Yazıları resme yaslamak için
+        float: left;
+        // Resmi tam anlamıyla yuvarlak yapmak için
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);;
+        position: relative;
+    }
+
+    &__img{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .4s;
+    }
+
+    &__text{
+        transform: skewX(12deg);
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .4s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    &:hover &__img{
+        transform: translateX(-4rem) scale(1);
+        // Parlaklık 100% altı karartır, üstü açar
+        filter: blur(1px) brightness(80%);
+    }
+}
