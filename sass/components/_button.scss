@@ -8,7 +8,7 @@
         font-size: $default-font-size;
         // Inlıne element olduğu için blok yap
         display: inline-block;
-        transition: all 0.2s;
+        transition: all .3s;
         border-radius: 10rem;
 
         // button::after'a  referans olması için
@@ -18,7 +18,7 @@
     &:hover {
         transform: translateY(-4px);
         // X direction , Y direction, Blur, Color
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
 
         &::after {
             // Scale özelliği X ve Y yönünde farklı yazılabilir
@@ -30,7 +30,7 @@
     // Tıklanmış buton
     &:active {
         transform: translateY(-1px);
-        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
 
     &--white {
@@ -40,6 +40,16 @@
         // Beyaz olması için
         &::after {
             background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        // Beyaz olması için
+        &::after {
+            background-color: $color-primary;
         }
     }
 
@@ -58,13 +68,13 @@
         left: 0;
         // Butonun arkasına saklamak için
         z-index: -1;
-        transition: all 0.4s;
+        transition: all .4s;
     }
 
     &--animated {
         backface-visibility: hidden;
         // başlangıçta butonu görünmez yap 'backwards'
-        animation: moveInBottom 0.5s ease-out 0.75s backwards;
+        animation: moveInBottom .5s ease-out .75s backwards;
     }
 }
 

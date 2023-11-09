@@ -10,6 +10,7 @@
     // Boyut değişse de resmi en üste sabit tut
     background-position: top;
     // Öğeyi cliplemek [Sol üst - sağ üst - sağ alt - sol alt]
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     // Logo için referans olması adına relative
