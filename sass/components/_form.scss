@@ -1,0 +1,103 @@
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, $alpha: 0.5);
+        border: none;
+        transition: all .3s;
+        // Focuslanınca kaymayı engellemek için border'ı başta da ver ve transparent yap
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, $alpha: 0.1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        // Focus'da değerlerin doğru olmadığı durum
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        &::placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        // Display block yapmadan margin padding kullanamayız.
+        display: block;
+        transition: all .3s;
+        transform: translateY(0);
+    }
+
+    // Kardeş oluğu için + seçicisini kullanırız, tüm kardeşlere erişmek içinse "~" kullanılır
+    // Aynı zamanda HTML'de inputun arkasında olmalıdır. Önce olursa seçemeyiz.
+    &__input:placeholder-shown + &__label {
+        // Opaklık sadece animasyon için
+        opacity: 0;
+        // Opacity 0 sadece gizler, visibility tamamen yok eder.
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        width: 49%;
+        display: inline-block;
+    }
+
+    &__radio-label{
+        font-size: $default-font-size;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+        padding-left: 3.8rem;
+    }
+
+    &__radio-input{
+        display: none;
+    }
+
+    &__radio-button{
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+        &::after{
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after{
+        opacity: 1;
+    }
+}

@@ -1,5 +1,6 @@
+// .btn sadece "a" elementleri için doğru çalışır, normal buton için çalışmaz
 .btn {
-    // Buttonların ilk durumları için
+    &, // Buttonlar için de çalışmasını sağlamak için btn class'ını seçeriz
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -13,6 +14,8 @@
 
         // button::after'a  referans olması için
         position: relative;
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -28,7 +31,9 @@
     }
 
     // Tıklanmış buton
-    &:active {
+    &:active
+     {
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
