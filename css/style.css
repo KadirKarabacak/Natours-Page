@@ -1,3 +1,21 @@
+/*
+
+0-600px : Phone
+
+600-900px : Tablet portrait
+
+900-1200px: Tablet landscape
+
+[1200 - 1800px] is where our normal styles apply
+
+1800px + : Big desktop
+
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -37,6 +55,18 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
 
 body {
   box-sizing: border-box; }
@@ -655,7 +685,28 @@ body {
   z-index: 10000;
   position: fixed;
   top: 0;
-  left: 0; }
+  left: 0;
+  transition: all .3s;
+  opacity: 0;
+  visibility: hidden; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close:link, .popup__close:visited {
+    color: #777;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s;
+    line-height: 1; }
+  .popup__close:hover {
+    color: #55c57a; }
   .popup__content {
     width: 75%;
     background-color: #fff;
@@ -666,7 +717,10 @@ body {
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     display: table;
-    overflow: hidden; }
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all .3s .5s; }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
