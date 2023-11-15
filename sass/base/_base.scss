@@ -42,4 +42,10 @@ html {
 
 body{
     box-sizing: border-box;
+    padding: 3rem;
+
+    // Tablet boyutunda tüm sayfanın paddingini kaldır.
+    @include respond (tab-port) { 
+        padding: 0;
+    }
 }

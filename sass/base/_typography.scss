@@ -4,7 +4,6 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem;
 }
 
 .heading-primary {
@@ -26,6 +25,12 @@ body {
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: ease-out;
+
+        // Responsive phone
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
 
     // Alt başlık
@@ -35,6 +40,11 @@ body {
         font-weight: 700;
         letter-spacing: 1.75rem;
         animation: moveInRight 1s ease-out;
+    
+        // Responsive phone
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
@@ -51,6 +61,16 @@ body {
     color: transparent;
     letter-spacing: 0.2rem;
     transition: all 0.3s;
+
+    // Res tab-port
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    // Res phone
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.05);

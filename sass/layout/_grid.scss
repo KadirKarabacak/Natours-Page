@@ -8,12 +8,21 @@
     // Responsive için max-width kullan
     max-width: $grid-width;
 
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+
     // Blok öğelerini ortalamak için trick
     margin: 0 auto;
 
     // Last-child hariç diğer tüm rowlara margin-bottom uygula
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
 
     @include clearfix;
@@ -26,6 +35,17 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                // Yanyana durmayacaklar artık
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        // Tablet responsive
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 
