@@ -54,7 +54,7 @@
     <!-- MAIN -->
     <main>
       <!-- AbOUT SECTION -->
-      <section class="section-about">
+      <section class="section-about reveal__section">
         <div class="section-about__head u-center-text u-margin-bottom-big">
           <!-- Yardımcı class [Utility]-->
           <h2 class="heading-secondary">
@@ -82,7 +82,27 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
-              <img
+                  <!-- Resmi tarayıcı resmimizin genişliklerine göre seçsin, 20vw resmin genişliği / 900px = %20 -- 300px default -->
+              <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                    sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                    alt="Photo 1"
+                    class="composition__photo composition__photo--p1"
+                    src="img/nat-1-large.jpg">
+                  <!-- srcset desteklemeyen tarayıcılar için src koyduk -->
+              <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" 
+                    sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                    alt="Photo 2"
+                    class="composition__photo composition__photo--p2"
+                    src="img/nat-2-large.jpg">
+                  
+              <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" 
+                    sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                    alt="Photo 3"
+                    class="composition__photo composition__photo--p3"
+                    src="img/nat-3-large.jpg">
+
+
+                <!-- <img
                 src="img/nat-1-large.jpg"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
@@ -94,14 +114,14 @@
                 src="img/nat-3-large.jpg "
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
       </section>
 
       <!-- CARDS SECTION -->
-      <section class="section-features">
+      <section class="section-features reveal__section">
         <div class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
@@ -150,7 +170,7 @@
       </section>
 
       <!-- TOURS SECTION -->
-      <section class="section-tours" id="section-tours">
+      <section class="section-tours reveal__section" id="section-tours">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             Most popular tours
@@ -258,7 +278,7 @@
       </section>
 
       <!-- STORIES SECTION -->
-      <section class="section-stories">
+      <section class="section-stories reveal__section">
         <!-- Arka plana video için section ile aynı boyutta element oluştur -->
         <div class="bg-video">
           <video class="bg-video__content" muted autoplay loop>
@@ -314,7 +334,7 @@
       </section>
 
       <!-- BOOKING FORM -->
-      <section class="section-book">
+      <section class="section-book reveal__section">
         <div class="row">
           <div class="book">
             <div class="book__form">
@@ -374,9 +394,16 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer reveal__section">
       <div class="footer__logo-box u-margin-bottom-big">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+        <!-- Art directory -->
+        <picture class="footer__logo">
+          <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width:37.5em)">
+          <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo"
+               src="img/logo-green-2x.png">
+        </picture>
+        <!-- Piksel yoğunluk durumuna göre kullanım için -->
+        <!-- <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo"> -->
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -416,6 +443,7 @@
         </div>
       </div>
     </div>
+    <script src="scrip.js"></script>
 </body>
 </html>
 
