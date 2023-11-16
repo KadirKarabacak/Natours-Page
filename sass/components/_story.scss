@@ -10,6 +10,16 @@
     backface-visibility: hidden;
     background-color: rgba($color-white, .6);
 
+    @include respond(tab-port){
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone){
+        transform: skewX(0);
+    }
+
     // alttakilerin skew'ini düzeltmek için Ama bu çalışmıyor
     // çünkü birden fazla transform aynı anda çalışmaz
     // ve shape içinde zaten bir transform var
@@ -29,6 +39,11 @@
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg);;
         position: relative;
+
+        @include respond(phone){
+            transform: translateX(-3rem) skewX(0);
+        }
+    
     }
 
     &__img{
@@ -39,6 +54,10 @@
 
     &__text{
         transform: skewX(12deg);
+
+        @include respond(phone){
+            transform: skewX(0);
+        }
     }
 
     &__caption{

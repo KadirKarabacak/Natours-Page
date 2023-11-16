@@ -17,6 +17,7 @@ html {
 
     //! HER ZAMAN BÜYÜK OLANLAR KÜÇÜKLERDEN ÖNCE GELMELİ / ÇAKIŞMAMA DURUMU İÇİN
 
+     
     // Büyük Masaüstü
     @include respond (big-desktop) {
         font-size: 75%; // 1rem = 12px olsun istiyoruz, 12/16 = 75%

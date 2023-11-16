@@ -6,13 +6,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    transition: all .3s;
+    transition: all 0.3s;
 
     opacity: 0;
     visibility: hidden;
 
     // Tıklanma ile popup açılımı
-    &:target{
+    &:target {
         opacity: 1;
         visibility: visible;
     }
@@ -22,9 +22,9 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
-    &__close{
+    &__close {
         &:link,
-        &:visited{
+        &:visited {
             color: $color-grey-dark;
             position: absolute;
             top: 2.5rem;
@@ -32,11 +32,11 @@
             font-size: 3rem;
             text-decoration: none;
             display: inline-block;
-            transition: all .2s;
+            transition: all 0.2s;
             line-height: 1;
         }
 
-        &:hover{
+        &:hover {
             color: $color-primary;
         }
     }
@@ -55,19 +55,29 @@
         overflow: hidden;
 
         opacity: 0;
-        transform: translate(-50%, -50%) scale(.25);
-        transition: all .3s .5s;
+        transform: translate(-50%, -50%) scale(0.25);
+        transition: all 0.3s 0.5s;
     }
 
     &__left {
         width: 33.333333%;
         // Alt öğelere table cell verip parent'a table veriyoruz
         display: table-cell;
+
+        @include respond(tab-port) {
+            display: flex;
+            width: 50%;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+        height: 23rem;
+
+        @include respond(tab-port) {
+            height: auto;
+        }
     }
 
     &__right {
@@ -77,9 +87,13 @@
         // Tablo içerik ortalama özelliği
         vertical-align: middle;
         padding: 3rem 5rem;
-    }
 
-    
+        @include respond(tab-port) {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+    }
 
     &__text {
         font-size: 1.4rem;
