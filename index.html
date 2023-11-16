@@ -84,19 +84,19 @@
             <div class="composition">
                   <!-- Resmi tarayıcı resmimizin genişliklerine göre seçsin, 20vw resmin genişliği / 900px = %20 -- 300px default -->
               <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
-                    sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                     alt="Photo 1"
                     class="composition__photo composition__photo--p1"
                     src="img/nat-1-large.jpg">
                   <!-- srcset desteklemeyen tarayıcılar için src koyduk -->
               <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" 
-                    sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                     alt="Photo 2"
                     class="composition__photo composition__photo--p2"
                     src="img/nat-2-large.jpg">
                   
               <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" 
-                    sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                     alt="Photo 3"
                     class="composition__photo composition__photo--p3"
                     src="img/nat-3-large.jpg">
@@ -297,7 +297,14 @@
         <div class="row">
           <div class="story">
             <figure class="story__shape">
-              <img src="img/nat-8.jpg" alt="Person on a tour" class="story__img">
+
+              <img srcset="img/nat-8-small.jpg 300w, img/nat-8.jpg 1000w" 
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                    alt="Person on a tour"
+                    class="story__img"
+                    src="img/nat-8.jpg">
+
+              <!-- <img src="img/nat-8-small.jpg" alt="Person on a tour" class="story__img"> -->
               <figcaption class="story__caption">Mary Smith</figcaption>
             </figure>
             <div class="story__text">
@@ -305,8 +312,7 @@
               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
                 libero? Asperiores laudantium mollitia Ducimus,
                 libero? Asperiores laudantium mollitia Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
-                libero? Asperiores laudantium mollitia Ducimus,
-                libero? Asperiores laudantium mollitia </p>
+                libero? </p>
             </div>
           </div>
         </div>
@@ -314,7 +320,14 @@
         <div class="row">
           <div class="story">
             <figure class="story__shape">
-              <img src="img/nat-9.jpg" alt="Person on a tour" class="story__img">
+
+              <img srcset="img/nat-9-small.jpg 378w, img/nat-9.jpg 1000w"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 378px"
+                    alt="Person on a tour"
+                    class="story__img"
+                    src="img/nat-9.jpg">
+
+              <!-- <img src="img/nat-9-small.jpg" alt="Person on a tour" class="story__img"> -->
               <figcaption class="story__caption">Jack Wilson</figcaption>
             </figure>
             <div class="story__text">
