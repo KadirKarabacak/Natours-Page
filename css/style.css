@@ -296,9 +296,9 @@ body {
           transform: scale(1.1); } }
     .composition__photo:hover {
       outline: 0.7rem solid #55c57a;
-      transform: scale(1.05) translateY(-0.5rem);
+      transform: scale(1.4) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
+      z-index: 23333; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95);
     filter: grayscale(0.8); }
