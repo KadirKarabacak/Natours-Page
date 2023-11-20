@@ -202,7 +202,11 @@
 
 
     //: FLIP CARDS RESPONSIVE
-    @include respond(tab-port) {
+    // Ancak bu sorgu hover yapılamayan tüm cihazlarda çalışmaz,
+    // bu yüzden ekstra sorgu eklemeliyiz, bunu include ile yapamayız. Sorgunun kendisini getireceğiz
+    // @include respond(tab-port) {
+    @media only screen and (max-width:56.25em),
+           only screen and (hover: none) {
         height: auto;
         border-radius: 3px;
         background-color: $color-white;

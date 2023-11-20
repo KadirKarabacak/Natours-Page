@@ -111,6 +111,9 @@
     // Tıklama ile nav'ı açma özelliği
     &__checkbox:checked ~ &__background {
         transform: scale(80);
+        @include respond(phone){
+            transform: scale(100);
+        }
     }
 
     &__checkbox:checked ~ &__nav {
