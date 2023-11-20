@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    scroll-behavior: smooth;
 }
 
 // Kök font-size responsive için HTML'e her zaman 62.5% ver
@@ -16,7 +17,6 @@ html {
     // Böylece kullanıcı zoom yaptığında tüm sayfa düzenli kalır
 
     //! HER ZAMAN BÜYÜK OLANLAR KÜÇÜKLERDEN ÖNCE GELMELİ / ÇAKIŞMAMA DURUMU İÇİN
-
      
     // Büyük Masaüstü
     @include respond (big-desktop) {
@@ -38,7 +38,6 @@ html {
         font-size: 30%; // 1rem = 4.8px olsun istiyoruz, 4.8/16 = 30%
     }
 
-    
 }
 
 body{

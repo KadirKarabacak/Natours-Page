@@ -52,7 +52,8 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  scroll-behavior: smooth; }
 
 html {
   font-size: 62.5%; }
@@ -843,14 +844,6 @@ body {
     color: #55c57a;
     background-position: 100%;
     transform: translateX(1rem) scale(1.05) rotate(-1deg); }
-  .navigation__checkbox:checked ~ .navigation__background {
-    transform: scale(80); }
-    @media only screen and (max-width: 37.5em) {
-      .navigation__checkbox:checked ~ .navigation__background {
-        transform: scale(100); } }
-  .navigation__checkbox:checked ~ .navigation__nav {
-    opacity: 1;
-    visibility: visible; }
   .navigation__icon {
     position: relative;
     margin-top: 3.3rem; }
@@ -1002,14 +995,16 @@ body {
 .section-tours {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
-  margin-top: -9rem; }
+  margin-top: -9rem;
+  scroll-margin-top: -15rem; }
   @media only screen and (max-width: 56.25em) {
     .section-tours {
       padding: 20rem 0 10rem 0; } }
 
 .section-stories {
   position: relative;
-  padding: 15rem 0; }
+  padding: 15rem 0;
+  scroll-margin-top: -13rem; }
   @media only screen and (max-width: 56.25em) {
     .section-stories {
       padding: 10rem 0; } }
