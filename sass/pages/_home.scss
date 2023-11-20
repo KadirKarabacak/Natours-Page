@@ -110,8 +110,8 @@
     }
 
     @include respond(phone){
-        background-image: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%, transparent 50%),
-        url(../img/nat-10-small.jpg);
+        background-image: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%)
+        ,url(../img/nat-10-small.jpg);
     }
 
     &__form {
