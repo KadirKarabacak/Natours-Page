@@ -25,7 +25,7 @@
 * And other cool :hover effects
 * Each image and icon has a lower quality version of itself. These images are used to increase performance for devices with smaller screens.
 
-## 🛠 Technologies i used while creating the project :
+## 🛠 Technologies i used while creating the project 
 ![Tech-icon](./tech-icons/html-icon.png) ![Tech-icon](./tech-icons/css-icon.png)  ![Tech-icon](./tech-icons/sass-icon.png) ![Tech-icon](./tech-icons/npm-icon.png)
 <!--![Tech-icon](./tech-icons/js-icon.png) -->
 
