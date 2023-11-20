@@ -12,9 +12,10 @@ const controlHamburger = function () {
     if (navCheckbox.checked) {
       // Açılma varyasyonu
         closeOpenHamburger()
+        navCheckbox.checked = true
     } else {
       // Kapanma Varyasyonu
-      navBackground.style.transform = "scale(100)";
+      navBackground.style.transform = "scale(150)";
       navigationNav.style.opacity = 1;
       navigationNav.style.visibility = "visible";
     }
