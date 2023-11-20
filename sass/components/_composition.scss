@@ -52,13 +52,21 @@
 
         &:hover {
             outline: .7rem solid $color-primary;
-            transform: scale(1.4) translateY(-.5rem);
+            transform: scale(1.05) translateY(-.5rem);
             box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
             z-index: 23333;
+
+            @include respond(tab-port){
+                transform: scale(1.25) translateY(-.5rem);
+            }
+
+            @include respond(phone){
+                transform: scale(1.25) translateY(-.5rem);
+            }
         }
     }
     &:hover &__photo:not(:hover) {
-        transform: scale(0.95);
+        transform: scale(0.99);
         filter: grayscale(.8);
     }
 }

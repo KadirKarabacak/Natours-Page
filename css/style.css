@@ -296,11 +296,17 @@ body {
           transform: scale(1.1); } }
     .composition__photo:hover {
       outline: 0.7rem solid #55c57a;
-      transform: scale(1.4) translateY(-0.5rem);
+      transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 23333; }
+      @media only screen and (max-width: 56.25em) {
+        .composition__photo:hover {
+          transform: scale(1.25) translateY(-0.5rem); } }
+      @media only screen and (max-width: 37.5em) {
+        .composition__photo:hover {
+          transform: scale(1.25) translateY(-0.5rem); } }
   .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95);
+    transform: scale(0.99);
     filter: grayscale(0.8); }
 
 .feature-box {
