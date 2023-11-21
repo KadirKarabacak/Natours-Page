@@ -48,21 +48,21 @@
 ## <h2 align="center">MODAL SECTION</h2>
 ![Natours-Page](readme-img/natours-9.png)
 
-## :phone: İletişim
+## :phone: Contact
  <details align="center">
-   <summary><b> <samp> İletişime Geçin </samp></b></summary>
+   <summary><b> <samp> Contact with me </samp></b></summary>
    <br>
    <samp>
    <b><h2 style="color: #fc6203">KADIR&nbsp;KARABACAK </h2></b>
    <img src="https://raw.githubusercontent.com/TanZng/TanZng/master/assets/bonefire.gif" width="200"/>
      <br>
-     Projenin Linki: <a href="https://github.com/KadirKarabacak/Natours-Page">NATOURS PAGE</a>
+     Project's Link: <a href="https://github.com/KadirKarabacak/Natours-Page">NATOURS PAGE</a>
      <br>
      <br>
-     LinkedIn: <a href="https://www.linkedin.com/in/kadir-karabacak-/"> LinkedIn Hesabım</a>
+     LinkedIn: <a href="https://www.linkedin.com/in/kadir-karabacak-/"> LinkedIn </a>
      <br>
-     Instagram: <a href="https://www.instagram.com/kadir_krbck_/"> Instagram Hesabım</a>
+     Instagram: <a href="https://www.instagram.com/kadir_krbck_/"> Instagram account</a>
      <br>
-     Mail Adresim: <a href="#"> kadirht@hotmail.com</a>
+     E-Mail: <a href="#"> kadirht@hotmail.com</a>
    </samp>
  </details>
