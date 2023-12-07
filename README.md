@@ -1,7 +1,7 @@
 # <h1 align="center">🌳 NATOURS PAGE</h1>
 ## ❔ About project 
 * In this project i build a nature tours page with **Jonas Schmedthmann**.
-* Live version of Natours Page 🟢 ▶ <a href="https://natours-page-kadir.vercel.app/"> Natours-Page </a>
+* Live version of Natours Page 🟢 ▶ <a href="https://natours-page-k.netlify.app/"> Natours-Page </a>
 
 ## 🧩 Structure 
 * I used the **7-in-1 Sass** model to make it easier to develop and edit files.
